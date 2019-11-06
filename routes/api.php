@@ -24,4 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->name('api.')->group(function(){
 	Route::get('/heroes', 'HeroController@index')->name('heroes');
 	Route::get('/heroes/{id}', 'HeroController@show')->name('single_hero');
+
+	Route::post('/heroes', 'HeroController@store')->name('heroes_store');
 	});
