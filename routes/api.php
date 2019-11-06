@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/ok', function(){
-    return ['status'=> true];
-});
+// Route::get('/ok', function(){
+//     return ['status'=> true];
+// });
+
+Route::namespace('Api')->name('api.')->group(function(){
+	Route::get('/heroes', 'HeroController@index')->name('heroes');
+	Route::get('/heroes/{id}', 'HeroController@show')->name('single_hero');
+	});
