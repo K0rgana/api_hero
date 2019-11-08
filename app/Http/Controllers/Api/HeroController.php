@@ -42,4 +42,10 @@ class HeroController extends Controller
 
         return response()->json(['msg'=> 'Hero updated with success'], 201);
     }
+
+    public function delete(Hero $id)
+    {
+        $id->delete();
+        return response()-> json(['data'=> ['msg'=> 'Hero: '.$id->alias. ' deleted with success']],200);
+    }
 }
