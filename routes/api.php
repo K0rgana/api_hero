@@ -26,4 +26,5 @@ Route::namespace('Api')->name('api.')->group(function(){
 	Route::get('/heroes/{id}', 'HeroController@show')->name('single_hero');
 
 	Route::post('/heroes', 'HeroController@store')->name('heroes_store');
+	Route::put('/heroes/{id}', 'HeroController@update')->name('heroes_update');
 	});
