@@ -26,4 +26,12 @@ class HeroController extends Controller
         $data = ['data' => $id];
         return response() -> json($data);
     }
+
+    public function store(Request $request)
+    {
+        $herodata = $request->all();
+        $this->hero->create($herodata);
+
+        return response()->json(['msg'=> 'Hero created with success'], 201);
+    }
 }
