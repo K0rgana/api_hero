@@ -34,4 +34,12 @@ class HeroController extends Controller
 
         return response()->json(['msg'=> 'Hero created with success'], 201);
     }
+    public function update(Request $request, $id)
+    {
+        $herodata = $request->all();
+        $hero = $this->hero->find($id);
+        $hero->update($herodata);
+
+        return response()->json(['msg'=> 'Hero updated with success'], 201);
+    }
 }
